@@ -1,3 +1,3 @@
 import sayabel
 
-sayabel.Speak()
+sayabel.Speak(subreddit="jokes")

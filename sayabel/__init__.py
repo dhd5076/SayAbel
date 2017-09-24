@@ -1,8 +1,8 @@
 from sayabel.markov import *
 from sayabel.reddit import *
 
-def Speak():
+def Speak(subreddit):
     chain = MarkovChain()
-    for post in reddit.get_post_list("funny", Sort.HOT):
-        chain.train(post.title)
-    print(chain.generate(10))
+    for post in reddit.get_post_list(subreddit, Sort.HOT):
+        chain.train(post.text)
+    print(chain.generate())
