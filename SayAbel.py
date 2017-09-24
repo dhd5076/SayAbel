@@ -1,0 +1,3 @@
+import sayabel
+
+sayabel.Speak()
