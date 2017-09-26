@@ -1,5 +1,7 @@
 from sayabel.markov import *
 from sayabel.reddit import *
+from sayabel.gui import *
+
 
 def Speak(subreddit):
     chain = MarkovChain()
