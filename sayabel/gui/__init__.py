@@ -6,6 +6,8 @@ class SayAbelTkWindow(tk.Frame):
         super().__init__(master)
         self.pack()
 
+
+
     def initialize(self):
         pass
 

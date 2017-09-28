@@ -1,31 +1,10 @@
-"""""""""""""""""""""""""""""""""""""""
-           @@@@@@@@@@@@@@@@@           
-           @@@@@@@@@@@@@@@@@           
-   ,,,      ///////////////      ,,,   
-   ,,,,,,,   ***,,,,,,,***   ,,,,,,,   
-@  ,,,,,,,******,,,,,,,******,,,,,,,  @
-@  ,,,,,,*****###########*****,,,,,,  @
-@   ,,,*###&&&########&&&##,,,,   @
-@@@  ,***(&&&&&######&&&&&&/***,  @@@
-@@@@ ******#################****** @@@@
-@@@@********###############********@@@@
-@@@@@*********###########*********@@@@@
-@@@@@@//*******#########*******//@@@@@@
-@@@@@@@///******&&&&&&&******///@@@@@@@
-@@@@@@@@/////****&&&&&****/////@@@@@@@@
-@@@@@@@@@@@////**&&&&&**////@@@@@@@@@@@
-@@@@@@@@@@@@@@////***////@@@@@@@@@@@@@@
-"""""""""""""""""""""""""""""""""""""""
+# NOTE: This function will eventually be the entry to the program, but is currently being used to test functions.
+from sayabel.core import generator
 
-#NOTE: This function will eventually be the entry to the program, but is currently being used to test functions
-import sayabel
-
-#sayabel.Speak(subreddit="tifu")
-
-#TODO: Setup this file to be the main script
+# TODO: Setup this file to be the main script
 
 def main():
-    sayabel.initialize_window()
+    print(generator.generate_title('TIFU'))
 
 if __name__ == '__main__':
     main()
