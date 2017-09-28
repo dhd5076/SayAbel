@@ -1,4 +1,4 @@
-import sayabel
+import sayabel.reddit
 
 red_con_instance = sayabel.reddit.RedditConnection()
 
