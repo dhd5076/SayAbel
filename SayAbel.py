@@ -4,7 +4,7 @@ from sayabel.core import generator
 # TODO: Setup this file to be the main script
 
 def main():
-    print(generator.generate_title('TIFU'))
+    print(generator.generate_title('TIFU', 1000))
 
 if __name__ == '__main__':
     main()
