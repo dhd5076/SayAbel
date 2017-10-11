@@ -17,15 +17,15 @@ wht = array([[1,0,0],
              [0,1,0],
              [0,0,1]])
 
-print ":::::::INPUT\n"
+print(":::::::INPUT\n")
 
 def prc(i, w):
-    print i
-    print "::WEIGHT\n"
-    print w
-    print "::OUTPUT\n"
-    print sig(dot(i,w))
+    print(i)
+    print("::WEIGHT\n")
+    print(w)
+    print("::OUTPUT\n")
+    print(sig(dot(i,w)))
 
 #print out
 prc(inp, wht)
-print prc([0,1;o,1], wht)
+print(prc([0,1,1], wht))

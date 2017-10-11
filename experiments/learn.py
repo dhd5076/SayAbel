@@ -1,9 +1,7 @@
+import array
 from matplotlib import pyplot as plt
-import matplotlib.animation as anim
-import random
-import math
 from numpy import *
-
+import math
 
 def sig(x):
     return 1 / (1 + exp(-x))
@@ -21,9 +19,9 @@ def error(target_plot, test_plot):
 
 N = 3
 input = array([[0,0,1],[0,1,1],[1,0,1],[1,1,0]])
-print input
+print(input)
 input = random.rand(N,3)
-print input
+print(input)
 targt = array([random.rand(N,)]).T
 
 weigt = 2 * random.random((3, 1)) - 1
@@ -60,6 +58,6 @@ while sum(error(targt,think(input))) > .25:
         plt.pause(0.005)
 
 plt.show(0.005)
-print weigt
+print(weigt)
 
 
