@@ -19,13 +19,13 @@ class MarkovChain():
         self.wordlist = []
 
     def generate(self):
-        output = self.starters[randint(0, len(self.starters) - 1)]
+        output = self.wordlist[randint(0, len(self.wordlist) - 1)][0]
         next_word = output
         output += " "
         while True:
             next_word = str(self.get_next_word(next_word))
-            output += next_word + " "
-            if next_word == "":
+            output += (next_word + " ")
+            if next_word[-1] == ".":
                 break
         return output
 

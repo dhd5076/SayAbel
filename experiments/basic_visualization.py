@@ -37,7 +37,7 @@ class NeuralNet:
                 if neuron['LAYER'] == self.neurons[i]['LAYER'] + 1:
                     neuron['CONNECTIONS'].append([i, random.uniform(-1,1)])
         #create observance
-        self.neurons.append({})
+        #self.neurons.append({})
 
 
 def draw_square(x,y,value):
