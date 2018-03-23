@@ -1,0 +1,27 @@
+{
+  "name": "sayabel",
+  "version": "0.0.1",
+  "description": "sayabel",
+  "main": "app.js",
+  "author": "Dylan",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhd5076/SayAbel.git"
+  },
+  "keywords": [
+    "markov",
+    "philo",
+    "biblio",
+    "machine-learning",
+    "sayabel"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhd5076/SayAbel/issues"
+  },
+  "homepage": "https://github.com/dhd5076/SayAbel#readme",
+  "dependencies": {}
+}
