@@ -11,6 +11,7 @@ const fs = require('fs');
  */
 function SayAbel(debug, callback) {
     this.debug = debug;
+    this.data = {}
 };
 
 /**
@@ -20,7 +21,13 @@ function SayAbel(debug, callback) {
  */
 SayAbel.prototype.learnFromFile = function(filename, callback) {
     err = null;
-    callback(err);
+
+    fs.readFile(filename, 'utf8', (err, contents) => {
+        console.log(contents);
+    });
+    if(callback) {
+        callback(err);
+    }
 };
 
 /**
@@ -30,33 +37,41 @@ SayAbel.prototype.learnFromFile = function(filename, callback) {
  */
 SayAbel.prototype.learnFromString = function(string, callback) {
     err = null;
-    data = {};
 
     var words = string.split(' ');
     for(i = 0; i < words.length; i++) {
         if(words[i + 1] != null) {
-            if(data[words[i]] == null) {
-                data[words[i]] = [];
+            if(this.data[words[i]] == null) {
+                this.data[words[i]] = [];
             }
-            data[words[i]].push(words[i + 1]);
+            this.data[words[i]].push(words[i + 1]);
         }
     }
-    callback(data, err);
+    if(callback) {
+        callback(err);
+    }
 }
 
 /**
- * 
+ * Generate text of a given length2
  * @param {*} data data generated
  * @param {*} length approximate word count of returned message.
  * @param {*} callback function to call when finished
  */
-SayAbel.prototype.generateText = function(wordlist, length, callback) {
+SayAbel.prototype.generateText = function(length, callback) {
     err = null;
-    response = ["is"];
+    response = ["World"];
     for(i = 0; i < length; i++) {
-        response += wordlist[0]
+        possibleWords = this.data[response[i]]
+        if(possibleWords) {
+            response.push(possibleWords[Math.floor(Math.random() * possibleWords.length) + 0]);
+        }else {
+            response.push(". ");
+        }
     }
-    callback(data, err)
+    if(callback) {
+        callback(response, err);
+    }
 }
 
 //Export our functions as a psuedo-class
