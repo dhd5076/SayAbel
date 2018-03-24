@@ -20,14 +20,13 @@ function SayAbel(debug, callback) {
  * @param {*} callback function to call when finished
  */
 SayAbel.prototype.learnFromFile = function(filename, callback) {
-    err = null;
-
-    fs.readFile(filename, 'utf8', (err, contents) => {
-        console.log(contents);
+    fs.readFile(filename, 'utf8', (err, data) => {
+        this.learnFromString(data, (err) => {
+            if(callback) {
+                callback(err);
+            }
+        });
     });
-    if(callback) {
-        callback(err);
-    }
 };
 
 /**
@@ -37,7 +36,6 @@ SayAbel.prototype.learnFromFile = function(filename, callback) {
  */
 SayAbel.prototype.learnFromString = function(string, callback) {
     err = null;
-
     var words = string.split(' ');
     for(i = 0; i < words.length; i++) {
         if(words[i + 1] != null) {
@@ -60,17 +58,18 @@ SayAbel.prototype.learnFromString = function(string, callback) {
  */
 SayAbel.prototype.generateText = function(length, callback) {
     err = null;
-    response = ["World"];
+    response = [this.data["The"][0]];
     for(i = 0; i < length; i++) {
         possibleWords = this.data[response[i]]
         if(possibleWords) {
             response.push(possibleWords[Math.floor(Math.random() * possibleWords.length) + 0]);
         }else {
-            response.push(". ");
+            response.push(".");
+            i = length;
         }
     }
     if(callback) {
-        callback(response, err);
+        callback(response.join(' '), err);
     }
 }
 
