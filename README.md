@@ -9,7 +9,7 @@ npm install sayabel
 
 ## Example Usage
 ```javascript
-var SayAbel  = require('./index.js')
+var SayAbel  = require('sayabel')
 var sayabelInstance = new SayAbel(true);
 
 sayabelInstance.learnFromFile("data/nietzche-the-joyful-wisdom.txt", (err) => {
