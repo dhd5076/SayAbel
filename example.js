@@ -1,8 +1,8 @@
 ﻿var SayAbel  = require('./index.js')
 var sayabelInstance = new SayAbel(true);
 
-sayabelInstance.learnFromFile("data/plato-phaedrus-clean.txt", (err) => {
-  sayabelInstance.generateText(10, (text, err) => {
+sayabelInstance.learnFromFile("data/nietzche-the-joyful-wisdom.txt", (err) => {
+  sayabelInstance.generateText(100, (text, err) => {
     console.log(text);
   });
 });

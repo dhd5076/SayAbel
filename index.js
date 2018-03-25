@@ -58,7 +58,7 @@ SayAbel.prototype.learnFromString = function(string, callback) {
  */
 SayAbel.prototype.generateText = function(length, callback) {
     err = null;
-    response = [this.data["The"][0]];
+    response = ["The"];
     for(i = 0; i < length; i++) {
         possibleWords = this.data[response[i]]
         if(possibleWords) {
